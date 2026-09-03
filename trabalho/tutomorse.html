@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARD</title>
+    <link rel="icon" type="image/png" href="images.png">
+    <link rel="stylesheet" href="tutomorse.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- BLOCO: ESTILO PARA OCULTAR CONTEÚDO ANTES DO LOGIN -->
+    <style>
+        .esconder-tudo { display: none !important; }
+    </style>
+</head>
+
+<body>
+
+    <!-- BLOCO: CONTEÚDO PROTEGIDO DA PÁGINA (Inicia oculto) -->
+    <div id="conteudoProtegido" class="esconder-tudo">
+
+        <div class="navbar">
+            <div class="logo">
+                <a href="menu.html">
+                    <img src="images.png" alt="Logo">
+                </a>
+            </div>
+
+            <div class="menu">
+                <div class="theme-switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <label for="themeSwitch" class="slider">
+                        <span class="icon moon">D</span>
+                        <span class="icon sun">L</span>
+                    </label>
+                </div>
+            
+                <a href="referencias.html">Referências</a>
+                <!-- Botão de Sair importado do primeiro sistema -->
+                <a href="#" onclick="sair()" style="color: #f75a68; font-weight: bold; margin-left: 15px;">Sair</a>
+            </div>
+        </div>
+
+        <div class="navbar2">
+            <div class="opis">
+                <a href="historia.html">Historia</a>
+                <a href="tutorialard.html">Tutoriais Arduino</a>
+            </div>
+        </div>
+        
+        <div class="caixas">
+
+            <div class="box">
+                <h1 class="t1">
+                    <strong>Código morse no arduino (com luz e som) :</strong>
+                </h1>
+                <center>
+                <video controls width="999" height="500">
+                    <source src="video.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                </center>
+                <br>
+                <div class="texto">
+                    <h1>Projeto Arduino: Código Morse com Pisca-Alerta</h1> <h2>1. Materiais Necessários</h2> <p>Para montar o projeto, serão necessários os seguintes materiais:</p> <ul> <li><strong>1 Arduino Uno</strong></li> <li><strong>1 protoboard</strong></li> <li><strong>2 LEDs</strong></li> <li><strong>2 resistores</strong> para os LEDs</li> <li><strong>1 botão</strong></li> <li><strong>1 resistor</strong> para o botão, caso seja necessário</li> <li><strong>Fios jumper</strong></li> <li><strong>1 cabo USB</strong> para conectar o Arduino ao computador</li> <li><strong>Um computador</strong> para programar e testar o projeto</li> </ul> <h2>2. Montagem do Circuito</h2> <p>Comece colocando o <strong>Arduino Uno</strong> próximo à protoboard. A protoboard será utilizada para organizar e conectar os componentes do projeto.</p> <p>Em seguida, coloque o primeiro <strong>LED</strong> na protoboard. Esse LED será responsável por representar os sinais do <strong>código Morse</strong>.</p> <p>Conecte o LED a uma porta digital do Arduino utilizando um <strong>resistor</strong>. O outro terminal do LED deverá ser conectado ao <strong>GND</strong> do Arduino.</p> <p>Depois, coloque o segundo LED na protoboard. Ele será utilizado para representar o <strong>pisca-alerta</strong>. Faça a conexão utilizando outro resistor e uma porta digital diferente do Arduino.</p> <h2>3. Instalação do Botão</h2> <p>O <strong>botão</strong> será utilizado para controlar uma função do projeto, como iniciar uma mensagem em código Morse ou controlar o funcionamento do pisca-alerta.</p> <p>Coloque o botão na protoboard e faça as conexões necessárias com o Arduino. É importante conferir se todos os fios estão conectados corretamente antes de ligar o circuito.</p> <h2>4. Preparação do Programa</h2> <p>Depois de montar o circuito, conecte o Arduino ao computador utilizando o <strong>cabo USB</strong>.</p> <p>O projeto deverá ser programado para controlar os LEDs, identificar o funcionamento do botão e realizar a conversão das mensagens para <strong>código Morse</strong>.</p> <p>Também devem ser definidas as portas digitais utilizadas por cada componente, para que o Arduino saiba qual LED ou botão deverá controlar.</p> <h2>5. Digitando a Mensagem</h2> <p>O projeto possui uma área destinada à entrada de texto. Nessa área, o usuário pode <strong>digitar uma mensagem ou alterar um texto existente</strong>.</p> <p>Conforme a mensagem é modificada, o sistema realiza automaticamente a <strong>conversão do texto para código Morse</strong>.</p> <p>Isso permite que o usuário escreva diferentes palavras e frases sem precisar fazer a tradução manualmente.</p> <h2>6. Conversão para Código Morse</h2> <p>Depois que o texto é digitado, cada letra é transformada em uma combinação de <strong>pontos e traços</strong>.</p> <p>O sistema também utiliza espaços para separar os diferentes sinais e as diferentes letras, tornando a mensagem em Morse mais fácil de compreender.</p> <p>O resultado da conversão pode então ser utilizado pelo Arduino para controlar o <strong>LED do código Morse</strong>.</p> <h2>7. Funcionamento do LED Morse</h2> <p>O LED utilizado para o código Morse representa os sinais através de diferentes períodos de tempo.</p> <p>O <strong>ponto</strong> é representado por um sinal luminoso curto, enquanto o <strong>traço</strong> é representado por um sinal luminoso mais longo.</p> <p>Entre os sinais existem <strong>pausas</strong>, que permitem diferenciar os pontos, traços e letras da mensagem.</p> <h2>8. Funcionamento do Pisca-Alerta</h2> <p>O segundo LED funciona como um <strong>pisca-alerta</strong>. Quando ativado, ele acende e apaga continuamente em intervalos definidos pelo programa.</p> <p>Essa função permite demonstrar outro tipo de sinal luminoso utilizando o Arduino e pode ser controlada de acordo com a configuração do projeto.</p> <h2>9. Testando o Projeto</h2> <p>Após finalizar a montagem e a programação, faça os testes do projeto.</p> <ul> <li><strong>Digite uma mensagem</strong> na área de texto.</li> <li>Verifique se ela foi <strong>convertida automaticamente para código Morse</strong>.</li> <li>Observe se o <strong>LED Morse</strong> representa corretamente os pontos e traços.</li> <li>Teste o <strong>botão</strong> e verifique sua função.</li> <li>Confira se o <strong>pisca-alerta</strong> está funcionando corretamente.</li> </ul> <p>Caso algum componente não funcione, desligue o Arduino e verifique novamente as <strong>ligações da protoboard</strong> e dos componentes.</p> <h2>10. Melhorias Possíveis</h2> <p>Depois que o projeto estiver funcionando, podem ser adicionadas novas funções para deixá-lo mais completo.</p> <ul> <li><strong>Buzzer:</strong> emitir sons correspondentes ao código Morse.</li> <li><strong>Tela LCD:</strong> mostrar a mensagem e sua tradução.</li> <li><strong>Mais LEDs:</strong> criar diferentes sinais luminosos.</li> <li><strong>Mais botões:</strong> adicionar diferentes comandos ao projeto.</li> </ul> <h2>11. Conclusão</h2> <p>O projeto de <strong>Arduino com código Morse e pisca-alerta</strong> permite aprender conceitos de programação e eletrônica de maneira prática.</p> <p>O usuário pode <strong>digitar ou alterar uma mensagem</strong> e visualizar sua conversão para código Morse automaticamente. Em seguida, o Arduino pode utilizar os sinais convertidos para controlar o LED.</p> <p>O projeto também demonstra o funcionamento de <strong>LEDs, botões, resistores, portas digitais e temporização</strong>, tornando-se uma atividade interessante para compreender como o Arduino pode transformar informações em sinais luminosos.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <div class="fbox">
+                    <div class="text">
+                        <h2>Projeto feito por:</h2>
+                        <div class="tabelas-container">
+                            <table>
+                                <tr><td>- Bryan Miguel</td></tr>
+                                <tr><td>- Renato Pantarotto</td></tr>
+                                <tr><td>- Gabriel Brianty</td></tr>
+                                <tr><td>- Pedro Oliveira</td></tr>
+                                <tr><td>- José Anacleto</td></tr>
+                            </table>
+                            <table>
+                                <tr><td>- Henrique Damião</td></tr>
+                                <!-- Fechamento da tabela corrigido aqui -->
+                                <tr><td>- José Lucas</td></tr>
+                                <tr><td>- David Costa</td></tr>
+                                <tr><td>- Miguel Voltarelli</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts de funcionalidade e segurança -->
+    <script src="dark.js"></script>
+
+    <!-- BLOCO: RECONHECIMENTO AUTOMÁTICO DO LOGIN -->
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem('logadoNoSite') === 'sim') {
+                document.getElementById('conteudoProtegido').classList.remove('esconder-tudo');
+            } else {
+                alert("Acesso negado! Faça o login na página principal primeiro.");
+                window.location.href = "menu.html"; 
+            }
+        };
+
+        function sair() {
+            localStorage.removeItem('logadoNoSite');
+            window.location.href = "menu.html"; 
+        }
+    </script>
+
+</body>
+</html>

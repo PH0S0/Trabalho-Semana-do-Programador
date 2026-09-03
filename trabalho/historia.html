@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARD</title>
+    <link rel="icon" type="image/png" href="images.png">
+    <link rel="stylesheet" href="historia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- BLOCO: ESTILO PARA OCULTAR CONTEÚDO ANTES DO LOGIN -->
+    <style>
+        .esconder-tudo { display: none !important; }
+    </style>
+</head>
+
+<body>
+
+    <!-- BLOCO: CONTEÚDO PROTEGIDO DA PÁGINA (Inicia oculto) -->
+    <div id="conteudoProtegido" class="esconder-tudo">
+
+        <div class="navbar">
+            <div class="logo">
+                <a href="menu.html">
+                    <img src="images.png" alt="Logo">
+                </a>
+            </div>
+
+            <div class="menu">
+                <div class="theme-switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <label for="themeSwitch" class="slider">
+                        <span class="icon moon">D</span>
+                        <span class="icon sun">L</span>
+                    </label>
+                </div>
+            
+                <a href="referencias.html">Referências</a>
+                <a href="#" onclick="sair()" style="color: #f75a68; font-weight: bold; margin-left: 15px;">Sair</a>
+            </div>
+        </div>
+
+        <div class="navbar2">
+            <div class="opis">
+                <a href="Menu.html">Menu</a>
+                <a href="tutorialard.html">Tutoriais Arduino</a>
+            </div>
+        </div>
+
+        <div class="caixas">
+
+            <div class="box">
+                <h1 class="t1">
+                    <strong>A história do ARDUINO :</strong>
+                </h1>
+
+                <div class="texto">
+                    <h2>
+                        Em 2005 um professor Massimo Banzi, tinha um grande problema, seus alunos tinham uma grande dificuldade sobre a criação de protótipos de objetos interativos. As placas de desenvolvimento na época eram caras, complexas e tinham uma documentação fechada.
+    Frustrado, Massimo Banzi juntou-se com David Cuartielles, Tom Igoe, Gianluca Martino e o estudante David Mellis. O objetivo era criar uma alternativa simples, barata e OPEN-SOURCE
+    Após a junção de seus esforços, foi-se criado com inspiração na criação de Hernando Barragán, o wiring(sistema de fiação ou instalação elétrica de uma edificação ou equipamento), surgiu o arduino.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="box">
+                <h1 class="t2">
+                    <strong>Massimo Banzi</strong>
+                </h1>
+
+                <div class="texto2">
+                    <div class="banzarini">
+                        <img src="banzaninilazarini.jpg">
+                    </div>
+                    <h5>Criador do Arduino.</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer">
+                <div class="fbox">
+
+                    <!-- TABELAS DE INTEGRANTES INSTALADAS AQUI -->
+                    <div class="text">
+                        <h2>Projeto feito por:</h2>
+                        <div class="tabelas-container">
+                            <table>
+                                <tr><td>- Bryan Miguel</td></tr>
+                                <tr><td>- Renato Pantarotto</td></tr>
+                                <tr><td>- Gabriel Brianty</td></tr>
+                                <tr><td>- Pedro Oliveira</td></tr>
+                                <tr><td>- José Anacleto</td></tr>
+                            </table>
+                            <table>
+                                <tr><td>- Henrique Damião</td></tr>
+                                <tr><td>- José Lucas</td></tr>
+                                <tr><td>- David Costa</td></tr>
+                                <tr><td>- Miguel Voltarelli</td></tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="text2">
+                        <img src="Culto Logo.png" alt="Logo Culto à Ciência">
+                        <h2>Culto à Ciência</h2>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="dark.js"></script>
+
+    <!-- BLOCO: RECONHECIMENTO AUTOMÁTICO DO LOGIN -->
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem('logadoNoSite') === 'sim') {
+                document.getElementById('conteudoProtegido').classList.remove('esconder-tudo');
+            } else {
+                alert("Acesso negado! Faça o login na página principal primeiro.");
+                window.location.href = "menu.html"; 
+            }
+        };
+
+        function sair() {
+            localStorage.removeItem('logadoNoSite');
+            window.location.href = "menu.html"; 
+        }
+    </script>
+
+</body>
+</html>
